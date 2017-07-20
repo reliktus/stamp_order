@@ -4,25 +4,42 @@
     <meta charset="UTF-8">
     <title>Pieczątki on-line</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" language="Javascript"
+     src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+    </script>
 </head>
 <body>
-<div class="row">
-    <div id="stampTextContainer">
+<script>
+    $(document).ready(function () {
+        updateStamp();
+    })
+</script>
+<div id="stampPreview">
+    Podgląd pieczątki
+</div>
+
+<div id="stampTextContainer">
         <input type="text" id="stampText" placeholder="Tu wpisz dane do pieczątki">
-    </div>
-    <div id="stampPreview">
-        Podgląd pieczątki
-    </div>
 </div>
-<div class="">
-    <div class="colorSelect">
-        <p>
-            Czerwona
-        </p>
-        <p>
-            <input title="Red" type="radio">
-        </p>
+<h2>Wybierz kolor obudowy:</h2>
+
+<div class="colorSelect" id="caseRed">
+    <div>
+        Czerwony
     </div>
+    <p>
+        <input title="Red" type="radio" name="caseColor" >
+    </p>
 </div>
+<div class="colorSelect" id="caseBlue">
+    <div>
+        Niebieski
+    </div>
+    <p>
+        <input title="Blue" type="radio" name="caseColor">
+    </p>
+</div>
+
+
 </body>
 </html>

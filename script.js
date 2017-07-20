@@ -1,3 +1,13 @@
-/**
- * Created by rlkt on 2017-07-18.
- */
+var caseColor =["red","blue"];
+var stampText = $('#stampText').placeholder();
+var stamp = {
+    color:caseColor[0],
+    text:stampText
+};
+function displayStamp() {
+    $('#stampPreview').innerHTML(stamp.text);
+}
+function updateStamp() {
+    stampText = $('#stampText').val();
+    displayStamp()
+}
