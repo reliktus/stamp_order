@@ -3,43 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Pieczątki on-line</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" language="Javascript"
-     src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
-    </script>
+    <link   rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
 </head>
 <body>
 <script>
     $(document).ready(function () {
-        updateStamp();
+        // displayStamp();
+        updateBtn();
+        resetBtn();
     })
 </script>
-<div id="stampPreview">
-    Podgląd pieczątki
-</div>
-
-<div id="stampTextContainer">
-        <input type="text" id="stampText" placeholder="Tu wpisz dane do pieczątki">
-</div>
-<h2>Wybierz kolor obudowy:</h2>
-
-<div class="colorSelect" id="caseRed">
-    <div>
-        Czerwony
+<div class="stampPreviewContainer">
+    <div id="stampPreview">
+        Podgląd pieczątki
     </div>
-    <p>
-        <input title="Red" type="radio" name="caseColor" >
-    </p>
+    <div class="updateStampBtn btn btn-info">Aktualizuj</div>
+    <div class="resetStampBtn btn btn-info">Zresetuj</div>
 </div>
-<div class="colorSelect" id="caseBlue">
-    <div>
-        Niebieski
-    </div>
-    <p>
-        <input title="Blue" type="radio" name="caseColor">
-    </p>
+<div>
+    <textarea type="text" title="Stamp text" id="stampText" placeholder="Wpisz treść pieczątki"></textarea>
 </div>
-
 
 </body>
 </html>

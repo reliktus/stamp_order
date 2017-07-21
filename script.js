@@ -1,13 +1,34 @@
 var caseColor =["red","blue"];
-var stampText = $('#stampText').placeholder();
+var stampTextVal = "";
 var stamp = {
-    color:caseColor[0],
-    text:stampText
+    color:"",
+    text:""
 };
 function displayStamp() {
-    $('#stampPreview').innerHTML(stamp.text);
+    console.log("displayStamp: " + stampTextVal);
+    stamp.color = caseColor;
+    stamp.text = stampTextVal;
+    if ( stampTextVal === "" ) {
+        stampTextVal = $('#stampText').attr('placeholder');
+    }
+    $('#stampPreview').css('color',stamp.color);
+    $('#stampPreview').html(stamp.text);
 }
-function updateStamp() {
-    stampText = $('#stampText').val();
-    displayStamp()
+ function textUpdate() {
+    stampTextVal = $('#stampText').val();
+    console.log("textUpdate: " + stampTextVal);
+    displayStamp();
+}
+function updateBtn() {
+    $('.updateStampBtn').click(function() {
+        textUpdate();
+        console.log("[Zaktualizowano]");
+    })
+}
+function resetBtn() {
+    $('.resetStampBtn').click(function() {
+        $('#stampText').val('');
+        textUpdate();
+        console.log("[Reset]");
+    })
 }
