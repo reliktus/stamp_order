@@ -1,15 +1,27 @@
-.stampPreviewContainer {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.stampInputContainer {
+    width: 400px;
 }
+.contain {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px dashed #2e9ad0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 8px 16px 0 rgba(0,0,0,0.19);
+}
+ .stampPreviewContainer {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+}
+ .stampTextColorContainer {
+     max-width: 400px;
+ }
 #stampPreview {
+    background-color: #fff;
     border: solid #000000;
     min-width: 200px;
     min-height: 100px;
-}
-.updateStampBtn {
-
+    text-align: center;
 }
 #stampText[type="text"] {
     text-align: center;
@@ -20,4 +32,16 @@
     box-sizing: border-box;
     border-right: 5px;
     resize: none;
+}
+.textColorSwitch:hover {
+    background-color: #fff !important;
+    transform: scale(1.1);
+}
+.btn {
+    font-weight: bold !important;
+    margin: 4px;
+    transition: transform .1s ease;
+}
+h4 {
+    color: #0f74a8 !important;
 }

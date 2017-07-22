@@ -7,26 +7,42 @@
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-
+    <script src="ckeditor/ckeditor.js"></script>
 </head>
 <body>
 <script>
     $(document).ready(function () {
-        // displayStamp();
-        updateBtn();
+        colorSwitch();
         resetBtn();
+        insertCKE();
+        updateColorButtons()
     })
 </script>
-<div class="stampPreviewContainer">
-    <div id="stampPreview">
-        Podgląd pieczątki
-    </div>
-    <div class="updateStampBtn btn btn-info">Aktualizuj</div>
-    <div class="resetStampBtn btn btn-info">Zresetuj</div>
+<div class="stampPreviewContainer contain text-center">
+    <h4>Podgląd pieczątki</h4>
+    <div id="stampPreview"></div>
+    <div class="btn btn-warning" id="resetBtn">Wyczyść dane pieczątki</div>
+</div>
+<div class="stampInputContainer contain text-center">
+    <h4>Wpisz treść pieczątki</h4>
+    <form>
+            <textarea type="text" title="Stamp text" id="editor"></textarea>
+    </form>
 </div>
 <div>
-    <textarea type="text" title="Stamp text" id="stampText" placeholder="Wpisz treść pieczątki"></textarea>
+<div class="stampTextColorContainer contain text-center">
+    <h4>Wybierz kolor tuszu</h4>
+    <div class="textColorSwitch btn " id="#000">
+        CZARNY
+    </div>
+    <div class="textColorSwitch btn" id="red">
+        CZERWONY
+    </div>
+    <div class="textColorSwitch btn " id="blue">
+        NIEBIESKI
+    </div>
 </div>
 
+</div>
 </body>
 </html>

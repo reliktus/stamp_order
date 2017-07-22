@@ -1,34 +1,38 @@
-var caseColor =["red","blue"];
-var stampTextVal = "";
 var stamp = {
-    color:"",
+    color:"red",
     text:""
 };
-function displayStamp() {
-    console.log("displayStamp: " + stampTextVal);
-    stamp.color = caseColor;
-    stamp.text = stampTextVal;
-    if ( stampTextVal === "" ) {
-        stampTextVal = $('#stampText').attr('placeholder');
-    }
-    $('#stampPreview').css('color',stamp.color);
-    $('#stampPreview').html(stamp.text);
+function updateColorButtons() {
+    $('.textColorSwitch')
+        .each(user_handler)
+        .on('change', user_handler);
 }
- function textUpdate() {
-    stampTextVal = $('#stampText').val();
-    console.log("textUpdate: " + stampTextVal);
-    displayStamp();
+function user_handler() {
+    var stat = $(this).attr('id');
+    $(this).css('color',stat).addClass('btn-default');
 }
-function updateBtn() {
-    $('.updateStampBtn').click(function() {
-        textUpdate();
-        console.log("[Zaktualizowano]");
-    })
-}
+
 function resetBtn() {
-    $('.resetStampBtn').click(function() {
-        $('#stampText').val('');
-        textUpdate();
-        console.log("[Reset]");
+    $('#resetBtn').on('click',function () {
+        CKEDITOR.instances.editor.setData('');
+        $('#stampPreview').html("");
     })
+}
+function insertCKE() {
+    CKEDITOR.replace( 'editor' );
+    var editor = CKEDITOR.instances.editor;
+    editor.on('key', function(){
+        var data = editor.getData();
+        $('#stampPreview').html(data);
+        updateTextColor();
+    });
+}
+function colorSwitch() {
+    $('.textColorSwitch').on('click', function () {
+        stamp.color = $(this).attr('id');
+        updateTextColor()
+    })
+}
+function updateTextColor() {
+    $('#stampPreview').css('color',stamp.color)
 }
