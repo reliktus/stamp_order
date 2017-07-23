@@ -1,5 +1,6 @@
 var stamp = {
-    color:"red",
+    color:"",
+    textColorName:"",
     text:""
 };
 function updateColorButtons() {
@@ -16,6 +17,10 @@ function resetBtn() {
     $('#resetBtn').on('click',function () {
         CKEDITOR.instances.editor.setData('');
         $('#stampPreview').html("");
+        stamp.color = "";
+        stamp.text = "";
+        stamp.textColorName = "";
+        updateTextColor();
     })
 }
 function insertCKE() {
@@ -30,9 +35,11 @@ function insertCKE() {
 function colorSwitch() {
     $('.textColorSwitch').on('click', function () {
         stamp.color = $(this).attr('id');
+        stamp.textColorName = $(this).attr('title');
         updateTextColor()
     })
 }
 function updateTextColor() {
+    $('.stampColorInfo').html('Kolor tuszu:' + stamp.textColorName);
     $('#stampPreview').css('color',stamp.color)
 }
