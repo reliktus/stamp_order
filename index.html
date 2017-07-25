@@ -13,61 +13,67 @@
 <script>
     $(document).ready(function () {
         colorSwitch();
+        modelSwitch();
         resetBtn();
         insertCKE();
         updateColorButtons()
     })
 </script>
-<div class="stampPreviewContainer contain text-center">
-    <h4>Podgląd pieczątki</h4>
-    <div id="stampPreview"></div>
-    <div class="btn btn-warning" id="resetBtn">Wyczyść dane pieczątki</div>
-    <p><u>Dane pięczątki:</u></p>
-    <div class="stampColorInfo">Kolor tuszu:</div>
-    <div class="stampModelInfo">Model:</div>
-    <div class="stampCaseColorInfo">Kolor obudowy:</div>
-</div>
-<div class="stampDataContainer contain text-center">
-    <h4>Wpisz treść pieczątki</h4>
-    <form>
+<div id="stampOptionsContainer" class="center text-center">
+    <h1>Pięczątki on-line</h1>
+    <div class="stampDataContainer contain text-center">
+        <h4>Wpisz treść pieczątki</h4>
+        <form>
             <textarea type="text" title="Stamp text" id="editor"></textarea>
-    </form>
-</div>
+        </form>
+    </div>
 
-<div class="stampDataContainer contain text-center">
-    <h4>Wybierz kolor tuszu</h4>
-    <div class="textColorSwitch btn " id="#000" title="Czarny">
-        CZARNY
+    <div class="stampDataContainer contain text-center">
+        <h4>Wybierz kolor tuszu</h4>
+        <div class="textColorSwitch btn " id="#000" title="Czarny">
+            CZARNY
+        </div>
+        <div class="textColorSwitch btn" id="red" title="Czerwony">
+            CZERWONY
+        </div>
+        <div class="textColorSwitch btn " id="blue" title="Niebieski">
+            NIEBIESKI
+        </div>
     </div>
-    <div class="textColorSwitch btn" id="red" title="Czerwony">
-        CZERWONY
+    <div class="stampDataContainer contain text-center">
+        <h4>Wybierz model </h4>
+        <div class="modelSwitch btn " id="1" title="Model 1">
+            Model 1
+        </div>
+        <div class="modelSwitch btn" id="2" title="Model 2">
+            Model 2
+        </div>
+        <div class="modelSwitch btn" id="3" title="Model 3">
+            Model 3
+        </div>
     </div>
-    <div class="textColorSwitch btn " id="blue" title="Niebieski">
-        NIEBIESKI
+    <div class="stampDataContainer contain text-center">
+        <h4>Wybierz kolor obudowy</h4>
+        <div class="modelColorSwitch btn " id="black" title="Czarna">
+            Model 1
+        </div>
+        <div class="modelColorSwitch btn" id="red" title="Czerwona">
+            Model 2
+        </div>
+        <div class="modelColorSwitch btn" id="blue" title="Niebieska">
+            Model 3
+        </div>
     </div>
-</div>
-<div class="stampDataContainer contain text-center">
-    <h4>Wybierz model </h4>
-    <div class="modelSwitch btn " id="1" title="Model 1">
-        Model 1
-    </div>
-    <div class="modelSwitch btn" id="2" title="Model 2">
-        Model 2
-    </div>
-    <div class="modelSwitch btn" id="3" title="Model 3">
-        Model 3
-    </div>
-</div>
-<div class="stampDataContainer contain text-center">
-    <h4>Wybierz kolor obudowy</h4>
-    <div class="modelColorSwitch btn " id="blac" title="Czarna">
-        Model 1
-    </div>
-    <div class="modelColorSwitch btn" id="red" title="Czerwona">
-        Model 2
-    </div>
-    <div class="modelColorSwitch btn" id="blue" title="Niebieska">
-        Model 3
+    <div class="stampPreviewContainer contain text-center">
+        <h4>Podgląd pieczątki</h4>
+        <div id="stampPreview"></div>
+        <div class="btn btn-warning" id="resetBtn">Wyczyść dane pieczątki</div>
+        <h5><u>Rozmiar pieczątki:</u></h5>
+        <div id="stampSize">X</div>
+        <p><u>Dane pięczątki:</u></p>
+        Kolor tuszu:<div class="stampColorInfo"></div>
+        Model:<div class="stampModelInfo"></div>
+        <div class="stampCaseColorInfo">Kolor obudowy:</div>
     </div>
 </div>
 </body>
