@@ -16,10 +16,23 @@
         modelSwitch();
         resetBtn();
         insertCKE();
-        updateColorButtons()
+        updateColorButtons();
+        previewSlider();
+
     })
 </script>
 <div id="stampOptionsContainer" class="center text-center">
+    <div class="stampPreviewContainer contain text-center">
+        <h4>Podgląd pieczątki</h4>
+        <div id="stampPreview"></div>
+        <h5><u>Rozmiar pieczątki:</u></h5>
+        <div id="stampSize">X</div>
+        <p><u>Dane pięczątki:</u></p>
+        Kolor tuszu:<div class="stampColorInfo"></div>
+        Model:<div class="stampModelInfo"></div>
+        <div class="stampCaseColorInfo">Kolor obudowy:</div>
+        <div class="btn btn-warning" id="resetBtn"> Wyczysc dane pieczątki</div>
+    </div>
     <h1>Pięczątki on-line</h1>
     <div class="stampDataContainer contain text-center">
         <h4>Wpisz treść pieczątki</h4>
@@ -28,7 +41,7 @@
         </form>
     </div>
 
-    <div class="stampDataContainer contain text-center">
+    <div class="stampDataContainer contain text-center" id="stampTop">
         <h4>Wybierz kolor tuszu</h4>
         <div class="textColorSwitch btn " id="#000" title="Czarny">
             CZARNY
@@ -64,17 +77,9 @@
             Model 3
         </div>
     </div>
-    <div class="stampPreviewContainer contain text-center">
-        <h4>Podgląd pieczątki</h4>
-        <div id="stampPreview"></div>
-        <div class="btn btn-warning" id="resetBtn">Wyczyść dane pieczątki</div>
-        <h5><u>Rozmiar pieczątki:</u></h5>
-        <div id="stampSize">X</div>
-        <p><u>Dane pięczątki:</u></p>
-        Kolor tuszu:<div class="stampColorInfo"></div>
-        Model:<div class="stampModelInfo"></div>
-        <div class="stampCaseColorInfo">Kolor obudowy:</div>
-    </div>
+</div>
+<div class="contain text-center center" id="stampNumbersContainer">
+    <h4>Podsumowanie zamówienia</h4>
 </div>
 </body>
 </html>

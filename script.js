@@ -7,17 +7,22 @@ var stamp = {
     caseColorName:"X",
     text:""
 };
-function updateColorButtons() {
+
+function previewSlider() {
     $(document).scroll(function() {
         var scrollVal = $(document).scrollTop();
         $('.stampPreviewContainer').css('top',scrollVal+'px');
-        if (scrollVal < 30) {
-            $('.stampPreviewContainer').css('top','100px');
+        if (scrollVal < 50) {
+            $('.stampPreviewContainer').css('top','40px');
         }
-        if (scrollVal > 1347) {
-            $('.stampPreviewContainer').css('top','1111px');
+        if (scrollVal > 335) {
+            $('.stampPreviewContainer').css('top','335px');
         }
     });
+}
+
+function updateColorButtons() {
+
     $('.modelColorSwitch')
         .each(user_handler)
         .on('change', user_handler);
@@ -32,7 +37,9 @@ function user_handler() {
     var stat = $(this).attr('id');
     $(this).css('color',stat).addClass('btn-default');
 }
-
+function moveTop() {
+    $('html, body').animate({ scrollTop: 10 }, 'fast');
+}
 function resetBtn() {
     $('#resetBtn').on('click',function () {
         CKEDITOR.instances.editor.setData('');
@@ -46,6 +53,7 @@ function resetBtn() {
         stamp.caseColorName="X";
         colorSwitch();
         modelSwitch();
+        moveTop();
     })
 }
 function insertCKE() {

@@ -5,6 +5,11 @@
     border: 1px dashed #2e9ad0;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 8px 16px 0 rgba(0,0,0,0.19);
 }
+#stampNumbersContainer {
+    margin-top: 20px;
+    width: 670px;
+    height: 500px; // only for test purpose
+}
 .center {
     margin: 0 auto;
 }
