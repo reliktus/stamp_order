@@ -12,8 +12,8 @@ function previewSlider() {
     $(document).scroll(function() {
         var scrollVal = $(document).scrollTop();
         $('.stampPreviewContainer').css('top',scrollVal+'px');
-        if (scrollVal < 50) {
-            $('.stampPreviewContainer').css('top','50px');
+        if (scrollVal < 40) {
+            $('.stampPreviewContainer').css('top','40px');
         }
         if (scrollVal > 335) {
             $('.stampPreviewContainer').css('top','335px');
@@ -38,7 +38,7 @@ function user_handler() {
     $(this).css('color',stat).addClass('btn-default');
 }
 function moveTop() {
-    $('html, body').animate({ scrollTop: 10 }, 'fast');
+    $('html, body').animate({ scrollTop: 0 }, 1000);
 }
 function resetBtn() {
     $('#resetBtn').on('click',function () {
