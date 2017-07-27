@@ -1,4 +1,14 @@
+.stampModelInfo {
+    widows: 80px;
+    height: 80px;
+}
+.stampPicture {
+    background-color: red;
+    width: 80px;
+    height: 80px;
+}
 .contain {
+    background-color: #FFFFFF;
     margin-top: 20px;
     padding: 15px;
     border-radius: 15px;
@@ -54,4 +64,7 @@
 }
 h4 {
     color: #0f74a8 !important;
+}
+body {
+    background-color: #c2e0f0 !important;
 }

@@ -1,22 +1,49 @@
-var stamp = {
+var actualStamp = {
     color:"",
     textColorName:"X",
-    model:"",
+    actualModel:"X",
     modelName:"X",
     caseColor:"",
     caseColorName:"X",
     text:""
 };
+var stamps = {
+    1:{ model:"Model_1",
+        price:"10",
+        picture:"img/stamp_example.jpg"},
 
+    2:{ model:"Model_2",
+        price:"12",
+        picture:"img/stamp_example.jpg"},
+
+    3:{ model:"Model_3",
+        price:"15",
+        picture:"img/stamp_example.jpg"}
+
+};
+function loadStampModels() {
+    $('.stampPicture')
+        .each(loadPicture)
+        .on('change', loadPicture);
+
+    function loadPicture() {
+        var stat = $(this).closest('div').attr('id');
+        $(this).attr('src',stamps[stat].picture);
+    }
+
+}
 function previewSlider() {
     $(document).scroll(function() {
         var scrollVal = $(document).scrollTop();
-        $('.stampPreviewContainer').css('top',scrollVal+'px');
+        move(scrollVal);
         if (scrollVal < 40) {
-            $('.stampPreviewContainer').css('top','40px');
+            move('40px');
         }
-        if (scrollVal > 335) {
-            $('.stampPreviewContainer').css('top','335px');
+        if (scrollVal > 355) {
+            move('355px');
+        }
+        function move(data) {
+            $('.stampPreviewContainer').css('top',data);
         }
     });
 }
@@ -32,30 +59,34 @@ function updateColorButtons() {
     $('.modelSwitch')
         .each(user_handler)
         .on('change', user_handler);
+
+    function user_handler() {
+        var stat = $(this).attr('id');
+        $(this).css('color',stat).addClass('btn-default');
+    }
 }
-function user_handler() {
-    var stat = $(this).attr('id');
-    $(this).css('color',stat).addClass('btn-default');
-}
-function moveTop() {
-    $('html, body').animate({ scrollTop: 0 }, 1000);
-}
+
+
 function resetBtn() {
     $('#resetBtn').on('click',function () {
         CKEDITOR.instances.editor.setData('');
         $('#stampPreview').html("");
-        stamp.color = "";
-        stamp.text = "";
-        stamp.textColorName = "X";
-        stamp.model = "";
-        stamp.modelName ="X";
-        stamp.caseColor="";
-        stamp.caseColorName="X";
+        actualStamp.color = "";
+        actualStamp.text = "";
+        actualStamp.textColorName = "X";
+        actualStamp.actualModel = "";
+        actualStamp.modelName ="X";
+        actualStamp.caseColor="";
+        actualStamp.caseColorName="X";
         colorSwitch();
         modelSwitch();
         moveTop();
-    })
+    });
+    function moveTop() {
+        $('html,body').animate({ scrollTop: 0 }, 1000);
+    }
 }
+
 function insertCKE() {
     CKEDITOR.replace( 'editor' );
     var editor = CKEDITOR.instances.editor;
@@ -66,24 +97,30 @@ function insertCKE() {
         updateStampSize();
     });
 }
+
 function colorSwitch() {
     $('.textColorSwitch').on('click', function () {
-        stamp.color = $(this).attr('id');
-        stamp.textColorName = $(this).attr('title');
-        $('.stampColorInfo').html('<b>' + stamp.textColorName + '</b>');
-        $('#stampPreview').css('color',stamp.color)
+        actualStamp.color = $(this).attr('id');
+        actualStamp.textColorName = $(this).attr('title');
+        updateColor();
     });
-    $('.stampColorInfo').html(stamp.textColorName);
-    $('#stampPreview').css('color',stamp.color)
+    updateColor();
+    function updateColor() {
+        $('.stampColorInfo').html('<b>' + actualStamp.textColorName + '</b>');
+        $('#stampPreview').css('color',actualStamp.color)
+    }
 }
+
 function modelSwitch() {
     $('.modelSwitch').on('click', function () {
-        stamp.model = $(this).attr('id');
-        stamp.modelName = $(this).attr('title');
-        $('.stampModelInfo').html('<b>' + stamp.modelName + '</b>');
+        var number = $(this).attr('id');
+        actualStamp.actualModel = stamps[number];
+        $('.stampModelInfo').html('<b>' + actualStamp.actualModel.model + '</b><br><img class=\"stampPicture\" src=\"' + actualStamp.actualModel.picture + '/">');
+
     });
-    $('.stampModelInfo').html(stamp.modelName);
+    $('.stampModelInfo').html('<b>' + actualStamp.modelName + '</b>' );
 }
+
 function updateStampSize() {
 
 

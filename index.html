@@ -18,6 +18,7 @@
         insertCKE();
         updateColorButtons();
         previewSlider();
+        loadStampModels();
 
     })
 </script>
@@ -30,7 +31,7 @@
         <p><u>Dane pięczątki:</u></p>
         Kolor tuszu:<div class="stampColorInfo"></div>
         Model:<div class="stampModelInfo"></div>
-        <div class="stampCaseColorInfo">Kolor obudowy:</div>
+        Kolor obudowy:<div class="stampCaseColorInfo"></div>
         <div class="btn btn-warning" id="resetBtn"> Wyczysc dane pieczątki</div>
     </div>
     <h1>Pięczątki on-line</h1>
@@ -54,16 +55,19 @@
         </div>
     </div>
     <div class="stampDataContainer contain text-center">
-        <h4>Wybierz model </h4>
-        <div class="modelSwitch btn " id="1" title="Model 1">
-            Model 1
+        <h4>Wybierz model</h4>
+        <div class="modelSwitch btn" id="1" title="Model 1">
+            <div>Model 1</div>
+            <img src="" class="stampPicture center" id="stamp_1">
         </div>
         <div class="modelSwitch btn" id="2" title="Model 2">
-            Model 2
+            <div>Model 2</div>
+            <img src="" class="stampPicture center" id="stamp_2">
         </div>
-        <div class="modelSwitch btn" id="3" title="Model 3">
-            Model 3
-        </div>
+            <div class="modelSwitch btn" id="3" title="Model 3">
+                <div>Model 3</div>
+                <img src="" class="stampPicture center" id="stamp_3">
+            </div>
     </div>
     <div class="stampDataContainer contain text-center">
         <h4>Wybierz kolor obudowy</h4>
