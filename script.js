@@ -5,7 +5,9 @@ var actualStamp = {
     modelName:"X",
     caseColor:"",
     caseColorName:"X",
-    text:""
+    text:"",
+    width:"",
+    height:""
 };
 var stamps = {
     1:{ model:"Model_1",
@@ -78,6 +80,7 @@ function resetBtn() {
         actualStamp.modelName ="X";
         actualStamp.caseColor="";
         actualStamp.caseColorName="X";
+        updateStampSize();
         colorSwitch();
         modelSwitch();
         moveTop();
@@ -115,13 +118,17 @@ function modelSwitch() {
     $('.modelSwitch').on('click', function () {
         var number = $(this).attr('id');
         actualStamp.actualModel = stamps[number];
-        $('.stampModelInfo').html('<b>' + actualStamp.actualModel.model + '</b><br><img class=\"stampPicture\" src=\"' + actualStamp.actualModel.picture + '/">');
+        $('.stampModelInfo').html('<b>' + actualStamp.actualModel.model + '</b><br><img class=\"stampPicture\" src=\"' + actualStamp.actualModel.picture + '\">');
 
     });
     $('.stampModelInfo').html('<b>' + actualStamp.modelName + '</b>' );
 }
 
 function updateStampSize() {
+    actualStamp.width = $('#stampPreview').width();
+    actualStamp.height = $('#stampPreview').height();
+    $('#stampSize').html(actualStamp.width + "x" + actualStamp.height);
+
 
 
 }

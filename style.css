@@ -40,8 +40,10 @@
     overflow: hidden;
     background-color: #fff;
     border: solid #000000;
-    width: 200px;
-    height: 110px;
+    min-width: 40px;
+    max-width: 201px;
+    min-height: 50px;
+    max-height: 110px;
     text-align: center;
 }
 #stampText[type="text"] {
