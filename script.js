@@ -1,3 +1,5 @@
+"use strict";
+
 var actualStamp = {
     color:"",
     textColorName:"X",
@@ -90,6 +92,12 @@ function resetBtn() {
     }
 }
 
+function updateStampSize() {
+    actualStamp.width = $('#stampPreview').width();
+    actualStamp.height = $('#stampPreview').height();
+    $('#stampSize').html(actualStamp.width + "x" + actualStamp.height);
+}
+
 function insertCKE() {
     CKEDITOR.replace( 'editor' );
     var editor = CKEDITOR.instances.editor;
@@ -117,18 +125,17 @@ function colorSwitch() {
 function modelSwitch() {
     $('.modelSwitch').on('click', function () {
         var number = $(this).attr('id');
+        console.log(number);
         actualStamp.actualModel = stamps[number];
         $('.stampModelInfo').html('<b>' + actualStamp.actualModel.model + '</b><br><img class=\"stampPicture\" src=\"' + actualStamp.actualModel.picture + '\">');
 
     });
     $('.stampModelInfo').html('<b>' + actualStamp.modelName + '</b>' );
 }
-
-function updateStampSize() {
-    actualStamp.width = $('#stampPreview').width();
-    actualStamp.height = $('#stampPreview').height();
-    $('#stampSize').html(actualStamp.width + "x" + actualStamp.height);
-
-
-
+function switchCaseColor() {
+    $('.modelColorSweitch').on('click',function () {
+        let data = $(this).attr('id');
+        let data1 = data.slice(1);
+        console.log(data1);
+    })
 }
