@@ -85,6 +85,7 @@ function resetBtn() {
         updateStampSize();
         colorSwitch();
         modelSwitch();
+        switchCaseColor();
         moveTop();
     });
     function moveTop() {
@@ -133,9 +134,11 @@ function modelSwitch() {
     $('.stampModelInfo').html('<b>' + actualStamp.modelName + '</b>' );
 }
 function switchCaseColor() {
-    $('.modelColorSweitch').on('click',function () {
-        let data = $(this).attr('id');
-        let data1 = data.slice(1);
-        console.log(data1);
+    $('.modelColorSwitch').on('click',function () {
+        let data = $(this).attr('id').slice(1);
+        console.log("data: " + data);
+        actualStamp.caseColorName = $(this).attr('title');
+        $('.CaseColorInfo').html(actualStamp.caseColorName);
     })
+    $('.CaseColorInfo').html(actualStamp.caseColorName);
 }
