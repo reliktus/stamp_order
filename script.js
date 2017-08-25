@@ -1,6 +1,6 @@
 "use strict";
 
-var actualStamp = {
+let actualStamp = {
     color:"",
     textColorName:"X",
     actualModel:"X",
@@ -11,18 +11,18 @@ var actualStamp = {
     width:"",
     height:""
 };
-var stamps = {
+let stamps = {
     1:{ model:"Model_1",
         price:"10",
-        picture:"img/stamp_example.jpg"},
+        picture:"img/stamp_example_1.jpg"},
 
     2:{ model:"Model_2",
         price:"12",
-        picture:"img/stamp_example.jpg"},
+        picture:"img/stamp_example_2.jpg"},
 
     3:{ model:"Model_3",
         price:"15",
-        picture:"img/stamp_example.jpg"}
+        picture:"img/stamp_example_3.jpg"}
 
 };
 function loadStampModels() {
@@ -43,8 +43,8 @@ function previewSlider() {
         if (scrollVal < 40) {
             move('40px');
         }
-        if (scrollVal > 355) {
-            move('355px');
+        if (scrollVal > 395) {
+            move('395px');
         }
         function move(data) {
             $('.stampPreviewContainer').css('top',data);
@@ -53,23 +53,19 @@ function previewSlider() {
 }
 
 function updateColorButtons() {
-
-    $('.modelColorSwitch')
-        .each(user_handler)
-        .on('change', user_handler);
-    $('.textColorSwitch')
-        .each(user_handler)
-        .on('change', user_handler);
-    $('.modelSwitch')
-        .each(user_handler)
-        .on('change', user_handler);
-
+    loader('.modelColorSwitch')
+    loader('.textColorSwitch')
+    loader('.modelSwitch')
+    function loader(atr) {
+        $(atr)
+            .each(user_handler)
+            .on('change', user_handler);
+    }
     function user_handler() {
         var stat = $(this).attr('id');
         $(this).css('color',stat).addClass('btn-default');
     }
 }
-
 
 function resetBtn() {
     $('#resetBtn').on('click',function () {
@@ -109,36 +105,46 @@ function insertCKE() {
         updateStampSize();
     });
 }
+function bouncer(atr) {
+    $(atr).effect("bounce", {direction:'left', times: 1}, 300);
+}
 
 function colorSwitch() {
+    let target = '.stampColorInfo';
     $('.textColorSwitch').on('click', function () {
+        $(target).hide(300);
         actualStamp.color = $(this).attr('id');
         actualStamp.textColorName = $(this).attr('title');
         updateColor();
+        $(target).show(300);
     });
     updateColor();
     function updateColor() {
-        $('.stampColorInfo').html('<b>' + actualStamp.textColorName + '</b>');
-        $('#stampPreview').css('color',actualStamp.color)
+        $(target).html('<b>' + actualStamp.textColorName + '</b>');
+        $('#stampPreview').css('color',actualStamp.color);
     }
 }
 
 function modelSwitch() {
+    let target = '.stampModelInfo';
     $('.modelSwitch').on('click', function () {
-        var number = $(this).attr('id');
+        let number = $(this).attr('id');
         console.log(number);
         actualStamp.actualModel = stamps[number];
-        $('.stampModelInfo').html('<b>' + actualStamp.actualModel.model + '</b><br><img class=\"stampPicture\" src=\"' + actualStamp.actualModel.picture + '\">');
-
+        $(target).html('<b>' + actualStamp.actualModel.model +
+            '</b><br><img class=\"stampPicture\" src=\"' + actualStamp.actualModel.picture + '\">');
+        bouncer(target);
     });
-    $('.stampModelInfo').html('<b>' + actualStamp.modelName + '</b>' );
+    $(target).html('<b>' + actualStamp.modelName + '</b>' );
 }
 function switchCaseColor() {
+    let target = '.CaseColorInfo';
     $('.modelColorSwitch').on('click',function () {
         let data = $(this).attr('id').slice(1);
         console.log("data: " + data);
         actualStamp.caseColorName = $(this).attr('title');
-        $('.CaseColorInfo').html(actualStamp.caseColorName);
+        $(target).html(actualStamp.caseColorName);
+        bouncer(target);
     })
-    $('.CaseColorInfo').html(actualStamp.caseColorName);
+    $(target).html(actualStamp.caseColorName);
 }
