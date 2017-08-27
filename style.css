@@ -1,6 +1,5 @@
 .stampModelInfo {
-    widows: 80px;
-    height: 80px;
+    height: 100px;
 }
 .stampPicture {
     background-color: red;
@@ -18,7 +17,7 @@
 #stampNumbersContainer {
     margin-top: 20px;
     width: 670px;
-    height: 500px; // only for test purpose
+    // height: 500px; // only for test purpose
 }
 .center {
     margin: 0 auto;
@@ -43,9 +42,12 @@
     min-width: 40px;
     max-width: 201px;
     min-height: 50px;
-    max-height: 110px;
+    max-height: 120px;
     text-align: center;
 }
+#stampPreviewSpace {
+    height: 110px;
+ }
 #stampText[type="text"] {
     text-align: center;
     height: 100px;

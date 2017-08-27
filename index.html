@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Pieczątki on-line</title>
     <link   rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/order.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script
             src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
@@ -12,6 +13,7 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <script src="ckeditor/ckeditor.js"></script>
+
 </head>
 <body>
 <script>
@@ -29,7 +31,9 @@
 <div id="stampOptionsContainer" class="center text-center">
     <div class="stampPreviewContainer contain text-center">
         <h4>Podgląd pieczątki</h4>
-        <div id="stampPreview"></div>
+        <div id="stampPreviewSpace">
+            <div id="stampPreview"></div>
+        </div>
         <h5><u>Rozmiar pieczątki:</u></h5>
         <div id="stampSize">X</div>
         <p><u>Dane pięczątki:</u></p>
@@ -48,13 +52,13 @@
 
     <div class="stampDataContainer contain text-center" id="stampTop">
         <h4>Wybierz kolor tuszu</h4>
-        <div class="textColorSwitch btn " id="#000" title="Czarny">
+        <div class="textColorSwitch btn " datatype="#000" title="Czarny">
             CZARNY
         </div>
-        <div class="textColorSwitch btn" id="red" title="Czerwony">
+        <div class="textColorSwitch btn" datatype="red" title="Czerwony">
             CZERWONY
         </div>
-        <div class="textColorSwitch btn " id="blue" title="Niebieski">
+        <div class="textColorSwitch btn " datatype="blue" title="Niebieski">
             NIEBIESKI
         </div>
     </div>
@@ -75,19 +79,21 @@
     </div>
     <div class="stampDataContainer contain text-center">
         <h4>Wybierz kolor obudowy</h4>
-        <div class="modelColorSwitch btn " id="_black" title="Czarna" >
+        <div class="modelColorSwitch btn " datatype="black" title="Czarna" >
             Model 1
         </div>
-        <div class="modelColorSwitch btn" id="_red" title="Czerwona">
+        <div class="modelColorSwitch btn" datatype="red" title="Czerwona">
             Model 2
         </div>
-        <div class="modelColorSwitch btn" id="_blue" title="Niebieska">
+        <div class="modelColorSwitch btn" datatype="blue" title="Niebieska">
             Model 3
         </div>
     </div>
 </div>
 <div class="contain text-center center" id="stampNumbersContainer">
     <h4>Podsumowanie zamówienia</h4>
+    <div id="pricePreview"><h2>Cena:</h2><div id="price1"></div></div>
+    <div class="btn-info btn disabled">Zamów</div>
 </div>
 </body>
 </html>
