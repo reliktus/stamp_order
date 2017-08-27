@@ -26,6 +26,7 @@
         previewSlider();
         loadStampModels();
         switchCaseColor();
+        stampCount();
     })
 </script>
 <div id="stampOptionsContainer" class="center text-center">
@@ -92,7 +93,20 @@
 </div>
 <div class="contain text-center center" id="stampNumbersContainer">
     <h4>Podsumowanie zamówienia</h4>
-    <div id="pricePreview"><h2>Cena:</h2><div id="price1"></div></div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="col-sm-6">
+                <h2>Ilość:</h2>
+            </div>
+            <div class="btn btn-info stampCount" datatype="--">-</div>
+            <div class="btn btn-default disabled" id="stampNumber">1</div>
+            <div class="btn btn-info stampCount" datatype="++">+</div>
+        </div>
+        <div class="col-sm-6">
+            <h2>Cena:</h2>
+            <div id="price1"></div>
+        </div>
+    </div>
     <div class="btn-info btn disabled">Zamów</div>
 </div>
 </body>
