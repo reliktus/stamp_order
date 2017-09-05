@@ -71,4 +71,14 @@ h4 {
 }
 body {
     background-color: #c2e0f0 !important;
+    margin-bottom: 20px !important;
+}
+.stampCount {
+    float:left;
+}
+#paymentContainer {
+    margin-top: 20px;
+    width: 670px;
+    box-sizing: border-box;
+    display: none;
 }

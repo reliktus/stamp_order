@@ -2,31 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pieczątki on-line</title>
+    <title>Pieczatki on-line</title>
     <link   rel="stylesheet" href="style.css">
     <script src="script/script.js"></script>
     <script src="script/order.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script
-            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
             integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <script src="ckeditor/ckeditor.js"></script>
 
 </head>
 <body>
 <script>
     $(document).ready(function () {
-        colorSwitch();
-        modelSwitch();
-        resetBtn();
-        insertCKE();
-        updateColorButtons();
-        previewSlider();
-        loadStampModels();
-        switchCaseColor();
-        stampCount();
+        loader()
     })
 </script>
 <div id="stampOptionsContainer" class="center text-center">
@@ -91,20 +83,28 @@
         </div>
     </div>
 </div>
+<div class="contain text-center center" id="paymentContainer">
+    <h4>Dane do wysłki</h4>
+
+
+</div>
 <div class="contain text-center center" id="stampNumbersContainer">
     <h4>Podsumowanie zamówienia</h4>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-7">
             <script>
                 drawCounter()
             </script>
         </div>
-        <div class="col-sm-6">
-            <h2>Cena:</h2>
-            <div id="price1"></div>
+        <div class="col-sm-5">
+            <div style="float:left">
+                <h2>Cena:</h2>
+            </div>
+            <h2 id="price1">0 zł</h2>
         </div>
     </div>
     <div class="btn-info btn disabled">Zamów</div>
 </div>
+
 </body>
 </html>
