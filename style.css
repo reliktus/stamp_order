@@ -79,6 +79,8 @@ body {
 #paymentContainer {
     margin-top: 20px;
     width: 670px;
+    height: 0;
     box-sizing: border-box;
     display: none;
+    opacity: 0;
 }
