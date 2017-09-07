@@ -22,6 +22,7 @@
 .center {
     margin: 0 auto;
 }
+
 #stampOptionsContainer {
     position: relative;
     width: 670px;
@@ -83,4 +84,14 @@ body {
     box-sizing: border-box;
     display: none;
     opacity: 0;
+}
+#mainPageContainer {
+    opacity: 0;
+    display: none;
+}
+
+#summary {
+    position: absolute;
+    top: 50px;
+    left: 100px;
 }
