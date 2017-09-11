@@ -11,3 +11,19 @@ function backToOrder() {
             { opacity: 1 }, 1500);
     })
 }
+
+function displaySummary() {
+
+    let html ='';
+
+    document.write(html);
+}
+function tester() {
+    $('#cke22')
+        .each(clicker)
+        .on('change',clicker);
+    function clicker() {
+        $('#cke_22').click();
+    }
+
+}

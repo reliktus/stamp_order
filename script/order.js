@@ -31,10 +31,9 @@ let order = {
     }
 };
 
-//Funkcja pokazuja/ukrywajaca panel danych kontaktowych w zaleznosci od stanu zamowienia
+//Funkcja pokazuja/ukrywajaca panel danych kontaktowych w zaleznosci od stanu zamowienia + aktywacja podsumowania
 function paymentShow(atr) {
     let stat = $(atr).css('display');
-    // console.log(stat);
     if (order.orderSpec && stat === 'none') {
         $(atr).css('display', 'block');
         $(atr).animate({
@@ -42,6 +41,7 @@ function paymentShow(atr) {
             opacity: 1,
         }, 1000, function () {
             console.log("Payment data shown");
+            $('#orderBtn').removeClass('disabled').prop("disabled",false);
         });
     } else if (order.orderSpec === false && stat === 'block'){
         $(atr).animate( {
@@ -50,6 +50,7 @@ function paymentShow(atr) {
         }, function () {
             console.log("Payment data hidden");
             $(atr).css('display', 'none');
+            $('#orderBtn').addClass('disabled').prop("disabled",true);
         });
     }
 }
@@ -75,12 +76,12 @@ function stampCount() {
 }
 
 function drawCounter() {
-    let data = '<div class=\"row\">' +
+    let data = '<div class=\"row \">' +
                     '<div class=\"col-sm-3\"><h2>Ilość:</h2></div>' +
                     '<div class=\"col-sm-5\">' +
-                        '<div class=\"btn btn-info stampCount\" datatype=\"--\">-</div>' +
-                        '<div><h2 id=\"stampNumber\">1</h2></div>' +
-                        '<div class=\"btn btn-info stampCount\" datatype=\"++\">+</div>'+
+                        '<div class=\"btn btn-info stampCount col-sm-3\" datatype=\"--\">-</div>' +
+                        '<div class=\"col-sm-4\"><h2 id=\"stampNumber\">1</h2></div>' +
+                        '<div class=\"btn btn-info stampCount col-sm-3\" datatype=\"++\">+</div>'+
                     '</div>' +
                 '</div>';
     document.write(data);

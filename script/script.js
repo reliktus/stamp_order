@@ -12,6 +12,7 @@ function loader(){
     stampCount();
     backToOrder();
     goSummary();
+    tester();
 }
 
 function loadStampModels() {
@@ -74,9 +75,11 @@ function resetBtn() {
   */
 function insertCKE() {
     CKEDITOR.replace( 'editor' );
+
     let editor = CKEDITOR.instances.editor;
     editor.on('change', function(){
         let data = editor.getData();
+        console.log(data);
         $('#stampPreview').html(data);
         actualStamp.text = data;
         updateStampSize();
