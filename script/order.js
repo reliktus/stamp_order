@@ -95,6 +95,9 @@ function goSummary() {
             }
         );
         $('#summary').css('display','block').animate(
-            { opacity: 1 }, 1200);
+            { opacity: 1 }, 1200, function () {
+                $('html,body').animate({ scrollTop: 0 }, 100);
+            });
+
     })
 }

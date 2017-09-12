@@ -5,6 +5,7 @@
     <title>Pieczatki on-line</title>
     <link   rel="stylesheet" href="style.css">
     <script src="script/script.js"></script>
+    <script src="script/logotype.js"></script>
     <script src="script/config.js"></script>
     <script src="script/stamps.js"></script>
     <script src="script/order.js"></script>
@@ -16,14 +17,15 @@
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <script src="ckeditor/ckeditor.js"></script>
+    <script>
+        $(document).ready(function () {
+            loader()
+        });
+    </script>
 
 </head>
 <body>
-<script>
-    $(document).ready(function () {
-        loader()
-    });
-</script>
+
 
 <div id="mainPageContainer">
 <div id="stampOptionsContainer" class="center text-center">
@@ -34,7 +36,9 @@
         </script>
         <div class="btn btn-warning" id="resetBtn"> Wyczysc dane pieczątki</div>
     </div>
-    <h1 class="text-primary">Pięczątki on-line</h1>
+
+    <h1 class="text-info logo_font">Pięczątki On-Line -
+    <img src="img/print.png" title="Logo"></h1>
     <div class="stampDataContainer contain">
         <h4 class="text-center">Wpisz treść pieczątki</h4>
         <form>
@@ -150,7 +154,12 @@
         <div class="btn btn-warning" id="backBtn">Popraw dane</div>
     </div>
 </div>
-
+<script>
+   actionDisplayXeroModule();
+</script>
+<div class="text-center">
+    <h5 class="text-info">Made by <a href="http://reliktus.github.io" target="_blank"><b>Rafał Jaworski</b></a></h5>
+</div>
 
 </body>
 </html>

@@ -12,7 +12,6 @@ function loader(){
     stampCount();
     backToOrder();
     goSummary();
-    tester();
 }
 
 function loadStampModels() {
@@ -42,19 +41,27 @@ function updateColorButtons() {
 
 // Keep preview slider on sight
 function previewSlider() {
-    $(document).scroll(function() {
-        let scrollVal = $(document).scrollTop();
-        move(scrollVal);
-        if (scrollVal < 40) {
-            move('40px');
-        }
-        if (scrollVal > 315) {
-            move('315px');
-        }
-        function move(data) {
-            $('.stampPreviewContainer').css('top',data);
-        }
-    });
+    $(document).ready(function () {
+        let preview = $('.stampPreviewContainer');
+        let fromTop = $('.logo_font').outerHeight();
+        let previewHeight = preview.height();
+        let fromBottom = $('#stampOptionsContainer').outerHeight() + fromTop + 40 - previewHeight;
+        console.log(fromBottom);
+        preview.css('top',fromTop);
+        $(document).scroll(function() {
+            let scrollVal = $(document).scrollTop();
+            move(scrollVal);
+            if (scrollVal < fromTop) {
+                move(fromTop + 'px');
+            }
+            if (scrollVal > fromBottom) {
+                move(fromBottom + 'px');
+            }
+            function move(data) {
+                $('.stampPreviewContainer').css('top',data);
+            }
+        });
+    })
 }
 
 function resetBtn() {

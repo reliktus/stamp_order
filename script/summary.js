@@ -18,12 +18,4 @@ function displaySummary() {
 
     document.write(html);
 }
-function tester() {
-    $('#cke22')
-        .each(clicker)
-        .on('change',clicker);
-    function clicker() {
-        $('#cke_22').click();
-    }
 
-}

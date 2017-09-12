@@ -10,13 +10,13 @@
     background-color: #FFFFFF;
     margin-top: 20px;
     padding: 15px;
-    border-radius: 15px;
-    border: 1px dashed #2e9ad0;
+    // border-radius: 15px;
+    // border: 1px solid #2e9ad0;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 8px 16px 0 rgba(0,0,0,0.19);
 }
 #stampNumbersContainer {
     margin-top: 20px;
-    width: 670px;
+    width: 680px;
     // height: 500px; // only for test purpose
 }
 .center {
@@ -25,16 +25,17 @@
 
 #stampOptionsContainer {
     position: relative;
-    width: 670px;
+    width: 680px;
 }
  .stampPreviewContainer {
      position: absolute;
      top: 40px;
-     right: 10px;
+     right: 0;
+     width:232px;
 }
 .stampDataContainer {
-    margin-right: 300px !important;
-    width: 400px;
+    margin-right: 285px !important;
+    width: 430px;
 }
 #stampPreview {
     text-align: left !important;
@@ -91,7 +92,7 @@ body {
 }
 #summary {
     position: relative;
-    width: 60%;
+    width: 680px;
     display: none;
     opacity: 0;
     margin-top: 30px;
@@ -106,4 +107,11 @@ body {
 }
 .cke_bottom {
     display: none !important;
+}
+.logo_font {
+    color: black;
+    background-color: #fff;
+    padding: 20px;
+    width: 680px;
+    margin: 20px auto;
 }
