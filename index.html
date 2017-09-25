@@ -76,13 +76,13 @@
     <div class="stampDataContainer contain text-center">
         <h4>Wybierz kolor obudowy</h4>
         <div class="modelColorSwitch btn " datatype="black" title="Czarna" >
-            Model 1
+            CZARNY
         </div>
         <div class="modelColorSwitch btn" datatype="red" title="Czerwona">
-            Model 2
+            CZERWONY
         </div>
         <div class="modelColorSwitch btn" datatype="blue" title="Niebieska">
-            Model 3
+            NIEBIESKI
         </div>
     </div>
 </div>
@@ -91,8 +91,10 @@
     <div class="contact_container col-sm-4">
         <p>Dane kontaktowe</p>
         <div class="form-group">
-            <label for="usr">Imię i nazwisko:</label>
-            <input type="text" class="form-control" id="usr">
+            <label for="usr" >Imię i Nazwisko:</label>
+            <input type="text" datatype="test" class="form-control" id="usr">
+            <label for="adr1">Adres:</label>
+            <input type="text" class="form-control" id="adr1">
             <label for="tel">Telefon kontaktowy:</label>
             <input type="tel" class="form-control" id="tel">
             <label for="email">E-mail:</label>
@@ -102,12 +104,12 @@
     <div class="contact_container col-sm-4">
         <p>Dane do faktury</p>
         <div class="form-group">
-            <label for="dana1">Nazwa firmy:</label>
+            <label for="dana1">Nazwa:</label>
             <input type="text" class="form-control" id="dana1">
             <label for="nip">NIP:</label>
             <input type="number"  class="form-control" id="nip">
-            <label for="dana2">E-mail:</label>
-            <input type="email" class="form-control" id="dana2">
+            <label for="dana2">Adres:</label>
+            <input type="text" class="form-control" id="dana2">
         </div>
     </div>
     <div class="contact_container col-sm-4">
@@ -139,19 +141,27 @@
 
 <div class="contain text-center center" id="summary">
     <h4>Podsumowanie</h4>
-    Informacje nt. zamówienia
+
     <p id="summaryShow"></p>
     <div class="form-group">
-        <div>
-            <script>
-                actualStamp.actionDisplaySummary();
-            </script>
-            <script>
-                displaySummary()
-            </script>
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Pieczątka</h4>
+                <script>
+                    actualStamp.actionDisplaySummary();
+                </script>
+                <script>
+                    displaySummary()
+                </script>
+            </div>
+            <div class="col-sm-6">
+                <h4>Dane</h4>
+            </div>
         </div>
-        <div class="btn btn-info" id="sendBtn">Wyślij zamówienie</div>
-        <div class="btn btn-warning" id="backBtn">Popraw dane</div>
+        <div>
+            <div class="btn btn-info" id="sendBtn">Wyślij zamówienie</div>
+            <div class="btn btn-warning" id="backBtn">Popraw dane</div>
+        </div>
     </div>
 </div>
 <script>

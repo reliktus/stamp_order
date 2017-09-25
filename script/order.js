@@ -5,6 +5,18 @@ let order = {
     price: 0,
     total: 0,
     orderSpec: false,
+    test: "",
+    orderData: {
+        fullName:"",
+        phone: "",
+        address: "",
+        mail: "",
+        extraInfo: ""},
+    orderInvoice: {
+        fullName: "",
+        NIP: "",
+        address: ""
+    },
     actionTotal: function() {
         this.total = (this.count * this.price).toFixed(2)
     },
@@ -37,7 +49,7 @@ function paymentShow(atr) {
     if (order.orderSpec && stat === 'none') {
         $(atr).css('display', 'block');
         $(atr).animate({
-            height: "300px",
+            height: "345px",
             opacity: 1,
         }, 1000, function () {
             console.log("Payment data shown");
@@ -100,4 +112,14 @@ function goSummary() {
             });
 
     })
+}
+function updateOrderData() {
+    $('.form-control').on('change',function () {
+        let dataKey = $(this).attr('datatype');
+        // let dataVal = (this).val();
+        // console.log("[key:] " + dataKey + " [dataVal:] " + dataVal);
+        order[dataKey] =  $(this).val();
+
+    })
+
 }

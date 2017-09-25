@@ -27,11 +27,10 @@ let actualStamp = {
     actionDisplaySummary: function () {
         let html =
             '<div id=\"stampPreviewSpace\">' +
-                '<div id=\"stampPreview\"></div>' +
+                '<div class=\"stampPreview\"></div>' +
             '</div>' +
-            '<h5><u>Rozmiar pieczątki:</u></h5>' +
+            '<h5>Rozmiar pieczątki:</h5>' +
             '<div id=\"stampSize\">X</div>' +
-            '<p><u>Dane pięczątki:</u></p>' +
             'Kolor tuszu:<div class=\"stampColorInfo\"></div>' +
             'Model:<div class=\"stampModelInfo\"></div>' +
             'Kolor obudowy:<div class=\"CaseColorInfo\"></div>';
@@ -56,7 +55,7 @@ function colorSwitch() {
     animate_check(target,newVal);
 }
 function updateColor() {
-    let target = '#stampPreview';
+    let target = '.stampPreview';
     $(target).fadeOut(function(){
         $(target).css('color',actualStamp.color).fadeIn(400);
     })

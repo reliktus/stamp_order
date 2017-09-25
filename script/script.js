@@ -12,6 +12,7 @@ function loader(){
     stampCount();
     backToOrder();
     goSummary();
+    updateOrderData();
 }
 
 function loadStampModels() {
@@ -45,7 +46,7 @@ function previewSlider() {
         let preview = $('.stampPreviewContainer');
         let fromTop = $('.logo_font').outerHeight();
         let previewHeight = preview.height();
-        let fromBottom = $('#stampOptionsContainer').outerHeight() + fromTop + 40 - previewHeight;
+        let fromBottom = $('#stampOptionsContainer').outerHeight() + fromTop + 10 - previewHeight;
         console.log(fromBottom);
         preview.css('top',fromTop);
         $(document).scroll(function() {
@@ -69,7 +70,7 @@ function resetBtn() {
         CKEDITOR.instances.editor.setData('');
         actualStamp.actionReset();
         order.actionReset();
-        $('#stampPreview').html(actualStamp.text);
+        $('.stampPreview').html(actualStamp.text);
         moveTop();
     });
     function moveTop() {
@@ -87,7 +88,7 @@ function insertCKE() {
     editor.on('change', function(){
         let data = editor.getData();
         console.log(data);
-        $('#stampPreview').html(data);
+        $('.stampPreview').html(data);
         actualStamp.text = data;
         updateStampSize();
         order.actionSpecCheck();
@@ -95,7 +96,7 @@ function insertCKE() {
 }
 
 function updateStampSize() {
-    let target = '#stampPreview';
+    let target = '.stampPreview';
     actualStamp.width = $(target).width();
     actualStamp.height = $(target).height();
     $('#stampSize').html(actualStamp.width + "x" + actualStamp.height);
