@@ -5,18 +5,14 @@ let order = {
     price: 0,
     total: 0,
     orderSpec: false,
-    test: "",
-    orderData: {
-        fullName:"",
-        phone: "",
-        address: "",
-        mail: "",
-        extraInfo: ""},
-    orderInvoice: {
-        fullName: "",
-        NIP: "",
-        address: ""
-    },
+    fullName:"",
+    phone: "",
+    address: "",
+    email: "",
+    extraInfo: "",
+    invName:'',
+    invNip: "",
+    invAddress:'',
     actionTotal: function() {
         this.total = (this.count * this.price).toFixed(2)
     },
@@ -71,7 +67,11 @@ function showPrice() {
     order.actionTotal();
     // console.log(order.total);
     let target ='#price1';
-    animate_check(target,order.total + ' zł')
+    let target2 = '#targetShowPaymentSummary';
+    let strPrice = (order.price).toFixed(2);
+    let html = order.count + ' X ' + strPrice + ' = ' + order.total + ' zł';
+    animate_check(target,html);
+    animate_check(target2,html);
 }
 
 function stampCount() {
@@ -89,10 +89,10 @@ function stampCount() {
 
 function drawCounter() {
     let data = '<div class=\"row \">' +
-                    '<div class=\"col-sm-3\"><h2>Ilość:</h2></div>' +
-                    '<div class=\"col-sm-5\">' +
-                        '<div class=\"btn btn-info stampCount col-sm-3\" datatype=\"--\">-</div>' +
-                        '<div class=\"col-sm-4\"><h2 id=\"stampNumber\">1</h2></div>' +
+                    '<div class=\"col-sm-4 \"><h2>Ilość:</h2></div>' +
+                    '<div class=\"col-sm-8\">' +
+                        '<div class=\"btn btn-info stampCount col-sm-3" datatype=\"--\">-</div>' +
+                        '<div class=\"col-sm-6\"><h2 id=\"stampNumber\">1</h2></div>' +
                         '<div class=\"btn btn-info stampCount col-sm-3\" datatype=\"++\">+</div>'+
                     '</div>' +
                 '</div>';
@@ -100,6 +100,21 @@ function drawCounter() {
 }
 
 function goSummary() {
+    function displayDataSummary() {
+        let html =
+            '<h4><u>Dane do wysyłki:</u></h4>' +
+            '<div>' + order.fullName + '</div>' +
+            '<div>' + order.address + '</div>' +
+            '<br>' +
+            '<p><u>Kontakt:</u></p>' +
+            '<p>' + order.phone + '</p>' +
+            '<br>' +
+            '<p><u>Potwierdzenie na adres:</u></p>' +
+            '<p>' + order.email + '</p>' +
+            '';
+        $('#targetShowDataSummary').html(html);
+    }
+    // Summary button action
     $('#orderBtn').on('click', function(){
         $('#mainPageContainer').animate(
             { opacity: 0 }, 500, function () {
@@ -110,16 +125,15 @@ function goSummary() {
             { opacity: 1 }, 1200, function () {
                 $('html,body').animate({ scrollTop: 0 }, 100);
             });
-
-    })
-}
-function updateOrderData() {
+        displayDataSummary();
+    });
+    // Save data form live on change
     $('.form-control').on('change',function () {
         let dataKey = $(this).attr('datatype');
-        // let dataVal = (this).val();
-        // console.log("[key:] " + dataKey + " [dataVal:] " + dataVal);
-        order[dataKey] =  $(this).val();
+        order[dataKey] = $(this).val();
+    });
 
-    })
+
 
 }
+

@@ -18,4 +18,3 @@ function displaySummary() {
 
     document.write(html);
 }
-

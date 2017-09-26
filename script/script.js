@@ -12,7 +12,6 @@ function loader(){
     stampCount();
     backToOrder();
     goSummary();
-    updateOrderData();
 }
 
 function loadStampModels() {
