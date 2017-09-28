@@ -98,7 +98,7 @@ function drawCounter() {
                 '</div>';
     document.write(data);
 }
-
+// Display order data on summary page
 function goSummary() {
     function displayDataSummary() {
         let html =
@@ -111,7 +111,10 @@ function goSummary() {
             '<br>' +
             '<p><u>Potwierdzenie na adres:</u></p>' +
             '<p>' + order.email + '</p>' +
-            '';
+            '<p><u>Dane do faktury:</u></p>' +
+            '<div>' + order.invName + '</div>' +
+            '<div>' + order.invNip + '</div>' +
+            '<div>' + order.invAddress + '</div>';
         $('#targetShowDataSummary').html(html);
     }
     // Summary button action

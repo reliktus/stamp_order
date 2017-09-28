@@ -12,6 +12,15 @@ function backToOrder() {
     })
 }
 
+function sendForm() {
+    $('#sendBtn').on('click',function () {
+        //$.get("script/mail.php");
+        // return false;
+        $('#form1').submit();
+        //alert("clicked");
+    })
+}
+
 function displaySummary() {
 
     let html ='';

@@ -12,8 +12,10 @@ function loader(){
     stampCount();
     backToOrder();
     goSummary();
+    sendForm();
 }
-
+//  add class'es to buttons after load / on change -> to be deleted.
+//  - stamps are gonna be writen by js dynamicly
 function loadStampModels() {
     $('.stampPicture')
         .each(loadPicture)
@@ -23,7 +25,8 @@ function loadStampModels() {
         $(this).attr('src',stamps[stat].picture);
     }
 }
-
+//  add class'es to buttons after load / on change -> to be deleted.
+//  - stamps are gonna be writen by js dynamicly
 function updateColorButtons() {
     loader('.modelColorSwitch');
     loader('.textColorSwitch');
@@ -39,7 +42,7 @@ function updateColorButtons() {
     }
 }
 
-// Keep preview slider on sight
+//  Keep preview slider on sight
 function previewSlider() {
     $(document).ready(function () {
         let preview = $('.stampPreviewContainer');
@@ -77,9 +80,7 @@ function resetBtn() {
     }
 }
 
-/*
- WYSIWYG editor loading
-  */
+//  WYSIWYG editor loading
 function insertCKE() {
     CKEDITOR.replace( 'editor' );
 
@@ -94,6 +95,7 @@ function insertCKE() {
     });
 }
 
+//  Draw actual stamp area size
 function updateStampSize() {
     let target = '.stampPreview';
     actualStamp.width = $(target).width();
@@ -101,6 +103,7 @@ function updateStampSize() {
     $('#stampSize').html(actualStamp.width + "x" + actualStamp.height);
 }
 
+//  Animation and data update on click
 function animate_check(atr, newVal) {
     order.actionSpecCheck();
     $(atr).fadeOut(function(){

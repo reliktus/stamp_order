@@ -1,7 +1,7 @@
 'use strict';
 
 /*
-    Available stamps config
+    Stamps data, available models, colors.
  */
 
 let stamps = {
@@ -15,5 +15,9 @@ let stamps = {
 
     3:{ model:"Model_3",
         price: 15.65,
-        picture:"img/stamp_3.jpg"}
+        picture:"img/stamp_3.jpg"},
+
+    4:{ model:"Model_2",
+        price: 11,
+        picture:"img/stamp_2.jpg"},
 };

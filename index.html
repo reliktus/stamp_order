@@ -105,11 +105,11 @@
         <p>Dane do faktury</p>
         <div class="form-group">
             <label for="dana1">Nazwa:</label>
-            <input type="text" class="form-control" id="dana1">
+            <input type="text" datatype="invName" class="form-control" id="dana1">
             <label for="nip">NIP:</label>
-            <input type="number"  class="form-control" id="nip">
+            <input type="number" datatype="invNip" class="form-control" id="nip">
             <label for="dana2">Adres:</label>
-            <input type="text" class="form-control" id="dana2">
+            <input type="text" datatype="invAddress" class="form-control" id="dana2">
         </div>
     </div>
     <div class="contact_container col-sm-4">
@@ -176,6 +176,12 @@
 <div class="text-center">
     <h5 class="text-info">Made by <a href="http://reliktus.github.io" target="_blank"><b>Rafał Jaworski</b></a></h5>
 </div>
+
+<form  method="post" name="myform" id="form1" action="script/mail.php">
+    <input type="text" name="mytext" maxlength="80" size="30">
+    <input type="submit" value="Submit" >
+</form>
+
 
 </body>
 </html>

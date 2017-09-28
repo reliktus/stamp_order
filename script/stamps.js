@@ -68,7 +68,9 @@ function modelSwitch() {
         let number = $(this).attr('id');
         actualStamp.actualModel = stamps[number];
         order.price = actualStamp.actualModel.price;
-        newVal = '<b>' + actualStamp.actualModel.model + '</b><br><img class=\"stampPicture\" src=\"' + actualStamp.actualModel.picture + '\">';
+        newVal =
+            '<b>' + actualStamp.actualModel.model + '</b><br>' +
+            '<img class=\"stampPicture\" src=\"' + actualStamp.actualModel.picture + '\">';
         animate_check(target,newVal);
         showPrice();
     });
