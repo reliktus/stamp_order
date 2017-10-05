@@ -91,6 +91,7 @@ function insertCKE() {
         $('.stampPreview').html(data);
         actualStamp.text = data;
         updateStampSize();
+        $('#mytext').val(data);
         order.actionSpecCheck();
     });
 }
