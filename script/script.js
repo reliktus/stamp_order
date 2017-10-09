@@ -91,16 +91,20 @@ function insertCKE() {
         $('.stampPreview').html(data);
         actualStamp.text = data;
         updateStampSize();
-        $('#mytext').val(data);
+        generateMailHtml(data);
         order.actionSpecCheck();
     });
+}
+function generateMailHtml(atr){
+    let data = "<div style=\'border-style:solid;width:" + actualStamp.width + ";\">" + atr + "</div>";
+    $('#mytext').val(data);
 }
 
 //  Draw actual stamp area size
 function updateStampSize() {
     let target = '.stampPreview';
-    actualStamp.width = $(target).width();
-    actualStamp.height = $(target).height();
+    actualStamp.width = $(target).width() + "px";
+    actualStamp.height = $(target).height() + "px";
     $('#stampSize').html(actualStamp.width + "x" + actualStamp.height);
 }
 
