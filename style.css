@@ -119,3 +119,6 @@ body {
     width: 725px;
     margin: 20px auto;
 }
+#form1 {
+    display: none;
+}
