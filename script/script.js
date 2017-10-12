@@ -87,7 +87,6 @@ function insertCKE() {
     let editor = CKEDITOR.instances.editor;
     editor.on('change', function(){
         let data = editor.getData();
-        // console.log(data);
         $('.stampPreview').html(data);
         actualStamp.text = data;
         updateStampSize();

@@ -98,7 +98,7 @@ function drawCounter() {
                 '</div>';
     document.write(data);
 }
-// Display order data on summary page
+//  Display order data on summary page
 function goSummary() {
     function displayDataSummary() {
         let html =
@@ -117,7 +117,7 @@ function goSummary() {
             '<div>' + order.invAddress + '</div>';
         $('#targetShowDataSummary').html(html);
     }
-    // Summary button action
+    //  Summary button action
     $('#orderBtn').on('click', function(){
         $('#mainPageContainer').animate(
             { opacity: 0 }, 500, function () {
@@ -130,13 +130,14 @@ function goSummary() {
             });
         displayDataSummary();
     });
-    // Save data form live on change
+    //  Save data form live on change
     $('.form-control').on('change',function () {
         let dataKey = $(this).attr('datatype');
         order[dataKey] = $(this).val();
     });
-
-
-
+    //  Block form from page reload
+    $('#form1').submit(function(event){
+        event.preventDefault(
+            alert('Dziekujemy za zamowienie'));
+    });
 }
-
