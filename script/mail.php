@@ -1,6 +1,6 @@
 <?php
 $to = "reliktus@gmail.com";
-$subject = "HTML email";
+$subject = "Zamowienie pieczatki";
 
 $message = $_POST['mytext1'];
 
@@ -9,7 +9,7 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-$headers .= 'From: Zamowienie: pieczatki' . "\r\n";
+$headers .= 'From: multixero@gmail.com' . "\r\n";
 
 
 mail($to,$subject,$message,$headers);
