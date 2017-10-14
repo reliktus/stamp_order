@@ -135,9 +135,27 @@ function goSummary() {
         let dataKey = $(this).attr('datatype');
         order[dataKey] = $(this).val();
     });
-    //  Block form from page reload
-    $('#form1').submit(function(event){
-        event.preventDefault(
-            alert('Dziekujemy za zamowienie'));
+    //  Send data to php mail script and block page from reload after php script running
+    $('#form1').on('submit', function(event) {
+        event.preventDefault();
+        let formData = $(this).serialize();
+        $.ajax({
+            type: 'POST',
+            url: 'script/mail.php',
+            dataType: "jsonp",
+            data: formData,
+
+            success: function(response) {
+                alert('Data send alert');
+                $('#summary').html(response + 'Dziękujemy za zamowienie. Potwierdzenie wysłane na maila.')
+            }
+
+        });
+        let target = '#summary';
+        let newVal = '<i class="fa fa-smile-o fa-5x" aria-hidden="true"></i>' +
+            '<h2 class="text-info"><p>Dziękujemy za zamówienie.</p></h2>' +
+            '<p><h4 class="text-info">Potwierdzenie zostało wysłane na podany adres E-mail.</h4></p>';
+        animate_check(target,newVal)
     });
+
 }

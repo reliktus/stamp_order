@@ -1,6 +1,6 @@
 <?php
 $to = "reliktus@gmail.com";
-$subject = "HTML email";
+$subject = "Zamowienie";
 
 $message = $_POST['mytext1'];
 
@@ -9,8 +9,8 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-$headers .= 'From: <webmaster@example.com>' . "\r\n";
-$headers .= 'Cc: myboss@example.com' . "\r\n";
+$headers .= 'From: <multixero@>' . "\r\n";
+
 
 mail($to,$subject,$message,$headers);
 echo('Mail send');
