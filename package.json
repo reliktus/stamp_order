@@ -1,0 +1,24 @@
+{
+  "name": "stamp_order",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jQuery-1.4.1-min.js",
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reliktus/stamp_order.git"
+  },
+  "author": "RJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reliktus/stamp_order/issues"
+  },
+  "homepage": "https://github.com/reliktus/stamp_order#readme"
+}
