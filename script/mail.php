@@ -2,7 +2,7 @@
 $to = "reliktus@gmail.com";
 $subject = "Zamowienie";
 
-$message = $_POST['mytext1'];
+$message = $_POST["mytext1"];
 
 // Always set content-type when sending HTML email
 $headers = "MIME-Version: 1.0" . "\r\n";
@@ -13,5 +13,5 @@ $headers .= 'From: <multixero@>' . "\r\n";
 
 
 mail($to,$subject,$message,$headers);
-echo('Mail send');
+
 ?>
